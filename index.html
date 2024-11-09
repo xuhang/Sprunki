@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprunki Retake:Play Sprunki Retake Online | SprunkiRetake.app</title>
+    <meta name="description" content="Play Sprunki Retake, the innovative horror-themed music creation game. Create unique compositions with eerie soundscapes and ghostly visuals in this fan-made Incredibox modification. Experience different game phases and join our community.">
+    <meta name="keywords" content="Sprunki Retake, music game, horror game, Incredibox mod, music creation, horror theme">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #6b21a8;
+            --secondary-color: #3b0764;
+            --accent-color: #86198f;
+            --text-color: #f3e8ff;
+            --background-dark: #18181b;
+        }
+
+        body {
+            background-color: var(--background-dark);
+            color: var(--text-color);
+        }
+
+        .game-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+            margin: 2rem 0;
+            margin-top: 0;
+        }
+
+        .game-frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--accent-color);
+            border-radius: 8px;
+        }
+
+        .feature-card {
+            background: linear-gradient(145deg, var(--secondary-color), var(--primary-color));
+            border: 1px solid var(--accent-color);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .fullscreen-btn {
+            background-color: var(--primary-color);
+            transition: background-color 0.3s ease;
+        }
+
+        .fullscreen-btn:hover {
+            background-color: var(--accent-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: var(--accent-color);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: -4px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+        }
+
+        .achievement-card {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            transition: all 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 20px rgba(107, 33, 168, 0.3);
+        }
+
+        .phase-card {
+            background: linear-gradient(145deg, #2d1b4d, #1a103d);
+            border: 1px solid var(--accent-color);
+            transition: all 0.3s ease;
+        }
+
+        .phase-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(134, 25, 143, 0.3);
+        }
+
+        .character-card {
+            background: linear-gradient(165deg, #2d1b4d, #1a103d);
+            border: 1px solid var(--accent-color);
+            transition: all 0.3s ease;
+        }
+
+        .character-card:hover {
+            transform: scale(1.03);
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 2rem 1rem;
+            }
+            
+            .timeline-item {
+                padding-left: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-gradient-to-r from-purple-900 to-fuchsia-900 py-6">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4"><a href="https://sprunkiretake.app/" title="Sprunki Retake Game">SprunkiRetake.app</a></h2>
+            <p class="text-xl text-center">Sprunki Retake: Experience the Horror-Themed Music Creation Adventure</p>
+        </div>
+    </header>
+
+    <nav class="bg-purple-800 sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-3">
+            <ul class="flex flex-wrap justify-center space-x-4 md:space-x-8">
+                <li><a href="#game" class="hover:text-purple-300">Play Now</a></li>
+                <li><a href="#features" class="hover:text-purple-300">Features</a></li>
+                <li><a href="#phases" class="hover:text-purple-300">Game Phases</a></li>
+                <li><a href="#characters" class="hover:text-purple-300">Characters</a></li>
+                <li><a href="#guide" class="hover:text-purple-300">Guide</a></li>
+                <li><a href="#community" class="hover:text-purple-300">Community</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8">
+        <section id="game" class="hero-section text-center mb-16">
+            <h1 class="text-4xl font-bold mb-2">Play Sprunki Retake Online For Free</h1>
+            <div class="game-container">
+                <iframe src="https://wowtbc.net/sprunkin/retake/index.html" class="game-frame" id="game-frame" allowfullscreen></iframe>
+            </div>
+            <button id="fullscreen-btn" class="fullscreen-btn px-6 py-3 rounded-lg text-white font-bold mb-4">
+                Enter Fullscreen Mode
+            </button>
+            <p class="text-lg mb-8">Sprunki Retake transforms the classic Incredibox experience into a haunting journey of sound and vision.</p>
+        </section>
+
+        <section id="features" class="features mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Why Play Sprunki Retake?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="feature-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Immersive Horror Theme</h3>
+                    <p>Experience the unique blend of music creation and horror elements in Sprunki Retake's atmospheric environment.</p>
+                </div>
+                <div class="feature-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Expanded Sound Library</h3>
+                    <p>Access a vast collection of eerie beats, haunting effects, and ghostly vocals to create your perfect horror soundtrack.</p>
+                </div>
+                <div class="feature-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Multiple Game Phases</h3>
+                    <p>Explore different phases of Sprunki Retake, each offering unique sounds and visual themes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="phases" class="game-phases mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Explore Sprunki Retake Phases</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="phase-card p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-4">Classic Phase</h3>
+                    <p class="mb-4">The foundation of Sprunki Retake's musical journey, featuring:</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Traditional sound elements</li>
+                        <li>Basic character interactions</li>
+                        <li>Fundamental mixing capabilities</li>
+                        <li>Core gameplay mechanics</li>
+                    </ul>
+                </div>
+                <div class="phase-card p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-4">Horror Mode</h3>
+                    <p class="mb-4">Dive into the darkness with enhanced features:</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Eerie sound effects</li>
+                        <li>Haunting visual themes</li>
+                        <li>Supernatural elements</li>
+                        <li>Dark atmosphere creation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="characters" class="characters mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Meet the Characters</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="character-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-3">The Phantom</h3>
+                    <p>Master of haunting melodies and ethereal sounds in Sprunki Retake.</p>
+                </div>
+                <div class="character-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-3">The Shadow</h3>
+                    <p>Creates deep, atmospheric basslines that form the foundation of your mix.</p>
+                </div>
+                <div class="character-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-3">The Whisper</h3>
+                    <p>Adds mysterious vocal elements to enhance your Sprunki Retake compositions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements" class="achievements mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Unlock Achievements</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="achievement-card p-6 rounded-lg text-center">
+                    <h3 class="text-lg font-bold mb-2">Sound Master</h3>
+                    <p>Create 50 unique compositions in Sprunki Retake</p>
+                </div>
+                <div class="achievement-card p-6 rounded-lg text-center">
+                    <h3 class="text-lg font-bold mb-2">Horror Virtuoso</h3>
+                    <p>Perfect the art of horror-themed music mixing</p>
+                </div>
+                <div class="achievement-card p-6 rounded-lg text-center">
+                    <h3 class="text-lg font-bold mb-2">Mix Champion</h3>
+                    <p>Receive 100 likes on your Sprunki Retake creations</p>
+                </div>
+                <div class="achievement-card p-6 rounded-lg text-center">
+                    <h3 class="text-lg font-bold mb-2">Dark Artist</h3>
+                    <p>Master all characters in horror mode</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="evolution" class="evolution mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">The Evolution of Sprunki Retake</h2>
+            <div class="timeline space-y-8">
+                <div class="timeline-item">
+                    <h3 class="text-xl font-bold mb-2">Origin</h3>
+                    <p>Born from the creative minds of Incredibox fans, Sprunki Retake began as an experimental mod.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3 class="text-xl font-bold mb-2">Development</h3>
+                    <p>Enhanced with unique horror elements and expanded sound libraries.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3 class="text-xl font-bold mb-2">Community Growth</h3>
+                    <p>Evolved through active community participation and feedback.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3 class="text-xl font-bold mb-2">Future Vision</h3>
+                    <p>Continuing to expand with new features and community-driven content.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="guide" class="gameplay mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Master Sprunki Retake</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-purple-900 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Getting Started</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Launch Sprunki Retake in your browser</li>
+                        <li>Familiarize yourself with the interface</li>
+                        <li>Explore available sound categories</li>
+                        <li>Learn basic mixing techniques</li>
+                        <li>Practice with simple combinations</li>
+                    </ul>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Advanced Techniques</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Master complex sound layering</li>
+                        <li>Create seamless transitions</li>
+                        <li>Develop unique horror themes</li>
+                        <li>Experiment with character combinations</li>
+                        <li>Perfect timing and rhythm</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="tips" class="tips mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Pro Tips & Tricks</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="feature-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Sound Mixing</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Balance bass and treble</li>
+                        <li>Layer sounds progressively</li>
+                        <li>Use silence effectively</li>
+                        <li>Create dynamic buildups</li>
+                    </ul>
+                </div>
+                <div class="feature-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Character Usage</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Learn character combinations</li>
+                        <li>Time character switches</li>
+                        <li>Master special abilities</li>
+                        <li>Unlock hidden features</li>
+                    </ul>
+                </div>
+                <div class="feature-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Performance</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Practice rhythm control</li>
+                        <li>Perfect your timing</li>
+                        <li>Create smooth transitions</li>
+                        <li>Build engaging patterns</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="faq mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-purple-900 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">About Sprunki Retake</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-bold mb-2">What is Sprunki Retake?</h4>
+                            <p>Sprunki Retake is a horror-themed music creation game that builds upon the Incredibox foundation, offering unique sound mixing experiences.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2">Is it free to play?</h4>
+                            <p>Yes, Sprunki Retake is completely free to play in your web browser.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2">Do I need musical experience?</h4>
+                            <p>No prior musical experience is required. Sprunki Retake is designed to be intuitive for all skill levels.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-purple-900 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Technical Questions</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-bold mb-2">What browsers are supported?</h4>
+                            <p>Sprunki Retake works on all modern browsers including Chrome, Firefox, Safari, and Edge.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2">Can I save my creations?</h4>
+                            <p>Yes, you can save and share your musical creations with the Sprunki Retake community.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2">Is mobile supported?</h4>
+                            <p>Yes, Sprunki Retake is fully optimized for both desktop and mobile devices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="community" class="community mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Join the Sprunki Retake Community</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="feature-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Share Your Creations</h3>
+                    <p class="mb-4">Upload your best Sprunki Retake compositions and get feedback from fellow creators.</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Get constructive feedback</li>
+                        <li>Inspire other creators</li>
+                        <li>Build your following</li>
+                        <li>Collaborate with others</li>
+                    </ul>
+                </div>
+                <div class="feature-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Community Events</h3>
+                    <p class="mb-4">Participate in regular events and competitions within the Sprunki Retake community.</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Weekly challenges</li>
+                        <li>Theme competitions</li>
+                        <li>Community showcases</li>
+                        <li>Special events</li>
+                    </ul>
+                </div>
+                <div class="feature-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Learn & Grow</h3>
+                    <p class="mb-4">Access resources and connect with experienced creators.</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Tutorial videos</li>
+                        <li>Strategy guides</li>
+                        <li>Creative workshops</li>
+                        <li>Mentorship opportunities</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="updates" class="updates mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Latest Updates</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="phase-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Recent Changes</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>New horror-themed sound effects</li>
+                        <li>Enhanced visual effects</li>
+                        <li>Improved mobile responsiveness</li>
+                        <li>Bug fixes and optimizations</li>
+                    </ul>
+                </div>
+                <div class="phase-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Coming Soon</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>New character designs</li>
+                        <li>Additional sound packs</li>
+                        <li>Community features</li>
+                        <li>Performance improvements</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Community Testimonials</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="feature-card p-6 rounded-lg">
+                    <p class="mb-4">"Sprunki Retake transformed how I think about music creation. The horror elements add a unique twist to the experience."</p>
+                    <p class="font-bold">- Alex M.</p>
+                </div>
+                <div class="feature-card p-6 rounded-lg">
+                    <p class="mb-4">"The community is incredibly supportive and creative. I've learned so much from other Sprunki Retake enthusiasts."</p>
+                    <p class="font-bold">- Sarah K.</p>
+                </div>
+                <div class="feature-card p-6 rounded-lg">
+                    <p class="mb-4">"As a horror fan and music lover, Sprunki Retake is the perfect blend of both worlds. Absolutely addictive!"</p>
+                    <p class="font-bold">- Mike R.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="game-modes" class="game-modes mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Sprunki Retake Game Modes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="phase-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Story Mode</h3>
+                    <p class="mb-4">Experience the dark narrative of Sprunki Retake through progressive chapters.</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Unlock new characters</li>
+                        <li>Discover hidden lore</li>
+                        <li>Progress through challenges</li>
+                        <li>Earn special rewards</li>
+                    </ul>
+                </div>
+                <div class="phase-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Freestyle Mode</h3>
+                    <p class="mb-4">Create without limits in Sprunki Retake's open creative environment.</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Access all sound elements</li>
+                        <li>Experiment freely</li>
+                        <li>Save unlimited tracks</li>
+                        <li>Share your creations</li>
+                    </ul>
+                </div>
+                <div class="phase-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Challenge Mode</h3>
+                    <p class="mb-4">Test your skills in Sprunki Retake's competitive environment.</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Weekly competitions</li>
+                        <li>Special theme challenges</li>
+                        <li>Global rankings</li>
+                        <li>Exclusive rewards</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="sound-library" class="sound-library mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Sprunki Retake Sound Collection</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="feature-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Horror Elements</h3>
+                    <div class="space-y-4">
+                        <p>Discover the spine-chilling sound elements that make Sprunki Retake unique:</p>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>Ghostly whispers</li>
+                            <li>Eerie ambiance</li>
+                            <li>Dark melodies</li>
+                            <li>Supernatural effects</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Musical Base</h3>
+                    <div class="space-y-4">
+                        <p>Core musical elements available in Sprunki Retake:</p>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>Rhythmic patterns</li>
+                            <li>Bass foundations</li>
+                            <li>Melodic layers</li>
+                            <li>Special effects</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="creation-tools" class="creation-tools mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Sprunki Retake Creation Tools</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="achievement-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-3">Loop Editor</h3>
+                    <p>Perfect your compositions with Sprunki Retake's advanced loop editing tools:</p>
+                    <ul class="list-disc list-inside mt-3">
+                        <li>Precise timing control</li>
+                        <li>Pattern adjustments</li>
+                        <li>Custom loop lengths</li>
+                    </ul>
+                </div>
+                <div class="achievement-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-3">Mix Console</h3>
+                    <p>Fine-tune your Sprunki Retake creations with professional mixing tools:</p>
+                    <ul class="list-disc list-inside mt-3">
+                        <li>Volume balancing</li>
+                        <li>Effect controls</li>
+                        <li>Track isolation</li>
+                    </ul>
+                </div>
+                <div class="achievement-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-3">Export Studio</h3>
+                    <p>Share your Sprunki Retake masterpieces in various formats:</p>
+                    <ul class="list-disc list-inside mt-3">
+                        <li>Multiple file formats</li>
+                        <li>Quality settings</li>
+                        <li>Social sharing</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="seasonal-events" class="seasonal-events mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Seasonal Sprunki Retake Events</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="character-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-3">Halloween Special</h3>
+                    <p>Experience enhanced horror elements and exclusive Halloween-themed content in Sprunki Retake.</p>
+                </div>
+                <div class="character-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-3">Winter Horror</h3>
+                    <p>Create chilling winter compositions with special Sprunki Retake seasonal sounds.</p>
+                </div>
+                <div class="character-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-3">Spring Shadows</h3>
+                    <p>Blend spring themes with dark elements in unique Sprunki Retake challenges.</p>
+                </div>
+                <div class="character-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-3">Summer Haunting</h3>
+                    <p>Discover summer-themed horror content in special Sprunki Retake events.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="creator-spotlight" class="creator-spotlight mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Sprunki Retake Creator Spotlight</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="feature-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Featured Artists</h3>
+                    <p class="mb-4">Discover outstanding Sprunki Retake creators and their unique compositions:</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Weekly features</li>
+                        <li>Creator interviews</li>
+                        <li>Behind the scenes</li>
+                        <li>Creation tutorials</li>
+                    </ul>
+                </div>
+                <div class="feature-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Community Highlights</h3>
+                    <p class="mb-4">Explore the best from the Sprunki Retake community:</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Top rated mixes</li>
+                        <li>Creative techniques</li>
+                        <li>Collaboration projects</li>
+                        <li>Community awards</li>
+                    </ul>
+                </div>
+                <div class="feature-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Learning Center</h3>
+                    <p class="mb-4">Learn from experienced Sprunki Retake creators:</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Expert tips</li>
+                        <li>Style guides</li>
+                        <li>Technique workshops</li>
+                        <li>Resource sharing</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="technical-requirements" class="technical-requirements mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Sprunki Retake Technical Guide</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="phase-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">System Requirements</h3>
+                    <p class="mb-4">Optimal setup for the best Sprunki Retake experience:</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Modern web browser</li>
+                        <li>Stable internet connection</li>
+                        <li>Audio output device</li>
+                        <li>HTML5 compatibility</li>
+                    </ul>
+                </div>
+                <div class="phase-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Performance Tips</h3>
+                    <p class="mb-4">Maximize your Sprunki Retake performance:</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Clear browser cache</li>
+                        <li>Update your browser</li>
+                        <li>Close unnecessary tabs</li>
+                        <li>Use headphones for best experience</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-purple-900 py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+                <div>
+                    <h3 class="text-xl font-bold mb-4"><a href="https://sprunkiretake.app/" title="Sprunki Retake Game">SprunkiRetake.app</a></h3>
+                    <p>Play Sprunki Retake Online For Free.</p>
+                    <p>Where Horror Meets Musical Creativity.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#game" class="hover:text-purple-300">Play Now</a></li>
+                        <li><a href="#features" class="hover:text-purple-300">Features</a></li>
+                        <li><a href="#guide" class="hover:text-purple-300">Game Guide</a></li>
+                        <li><a href="https://github.com/qiayue/Sprunki-Retake" class="hover:text-purple-300">Github</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Community</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#community" class="hover:text-purple-300">Join Us</a></li>
+                        <li><a href="#updates" class="hover:text-purple-300">Updates</a></li>
+                        <li><a href="#faq" class="hover:text-purple-300">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-purple-300">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-purple-300">Terms of Use</a></li>
+                        <li><a href="#" class="hover:text-purple-300">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <p class="text-sm">A fan-made modification of Incredibox. All rights reserved &copy; 2024</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const gameFrame = document.getElementById('game-frame');
+        const fullscreenBtn = document.getElementById('fullscreen-btn');
+
+        fullscreenBtn.addEventListener('click', () => {
+            if (gameFrame.requestFullscreen) {
+                gameFrame.requestFullscreen();
+            } else if (gameFrame.webkitRequestFullscreen) {
+                gameFrame.webkitRequestFullscreen();
+            } else if (gameFrame.msRequestFullscreen) {
+                gameFrame.msRequestFullscreen();
+            }
+        });
+
+        // Responsive handling for mobile devices
+        function adjustGameContainer() {
+            const gameContainer = document.querySelector('.game-container');
+            if (window.innerWidth <= 768) {
+                gameContainer.style.paddingBottom = '75%';
+            } else {
+                gameContainer.style.paddingBottom = '56.25%';
+            }
+        }
+
+        window.addEventListener('resize', adjustGameContainer);
+        adjustGameContainer();
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
